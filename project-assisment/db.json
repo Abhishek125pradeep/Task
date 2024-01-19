@@ -1,0 +1,48 @@
+{
+  "EmployeeData": [
+    {
+      "Name": "Pooja",
+      "LastName": "Chawre",
+      "Email": "Pooja123@gmail.com",
+      "Mobile": "7507912657",
+      "Company": "Cognigent",
+      "Gender": "Male",
+      "DOB": "1990-06-18",
+      "id": 6
+    },
+    {
+      "Name": "Jayesh",
+      "LastName": "Saleme",
+      "Email": "Abhishek125",
+      "Mobile": "784512336",
+      "Company": "buzzboard",
+      "Gender": "Male",
+      "DOB": "2000-08-25",
+      "Password": "lll",
+      "ConfirmPassword": "lll",
+      "id": 7
+    },
+    {
+      "Name": "Narayanrao",
+      "LastName": "Meghe",
+      "Email": "Naraya123@gmail.com",
+      "Mobile": "97651422369",
+      "Company": "HCL",
+      "Gender": "Male",
+      "DOB": "2000-08-25",
+      "Password": "lll",
+      "ConfirmPassword": "lll",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

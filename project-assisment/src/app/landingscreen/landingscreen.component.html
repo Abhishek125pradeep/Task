@@ -1,0 +1,111 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+<div style="border: 1px solid black; width: 100%; height: 60px; padding: 11px ; background-color: #7bc710;   box-shadow: 0 15px 40px rgba(0,0,0,.5);;">
+    <button type="button" class="btn active" data-bs-toggle="button" aria-pressed="true" (click)="admin()" style="margin-left: 650px; color: blue;">Add User</button> &nbsp;
+    <button  type="button" class="btn active" data-bs-toggle="button" aria-pressed="true" routerLink="/companydata">EmployeeData</button>
+</div>
+<!-- ngIf="!adminbtn" -->
+<br><br>
+
+<div class="main-div"  *ngIf="addUser"  >
+    <form [formGroup]="Loginform">
+        <mat-form-field class="input">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="Enter Your Name Here " formControlName="Name">
+            <mat-hint>Enter Your Name Here</mat-hint>
+            <mat-error
+                *ngIf="Loginform.get('Name')?.errors?.['pattern'] && !Loginform.get('Name')?.errors?.['maxlength'] && !Loginform.get('Name')?.errors?.['minlength'] && !Loginform.get('Name')?.errors?.['required']">
+                Name Should be In Alphabates Only </mat-error>
+            <mat-error *ngIf="Loginform.get('Name')?.errors?.['maxlength']"> Name should be maximum 15 charectors
+            </mat-error>
+            <mat-error *ngIf="Loginform.get('Name')?.errors?.['minlength']">Name should be Minimum 2 charectors
+            </mat-error>
+            <mat-error *ngIf="Loginform.get('Name')?.errors?.['minlength']">Name should be Minimum 2 charectors
+            </mat-error>
+            <mat-error *ngIf="Loginform.get('Name')?.errors?.['required']">Name should be Required </mat-error>
+        </mat-form-field><br><br>
+        <mat-form-field class="input">
+            <mat-label> Last Name </mat-label>
+            <input matInput placeholder="Enter Your Last Name Here" formControlName="LastName">
+            <mat-hint> Enter Your LastName Here</mat-hint>
+            <mat-error
+                *ngIf="Loginform.get('LastName')?.errors?.['pattern'] && !Loginform.get('LastName')?.errors?.['maxlength'] && !Loginform.get('LastName')?.errors?.['minlength'] && !Loginform.get('LastName')?.errors?.['minlength'] && !Loginform.get('LastName')?.errors?.['required']">Last
+                Name Should be Have in only Alphabates</mat-error>
+            <mat-error *ngIf="Loginform.get('LastName')?.errors?.['maxlength']">Last name should be Maximum 15 world
+                only</mat-error>
+            <mat-error *ngIf="Loginform.get('LastName')?.errors?.['minlength']">Last name should be Minimum 2 world
+                only</mat-error>
+            <mat-error *ngIf="Loginform.get('LastName')?.errors?.['required']">Last name should be required</mat-error>
+        </mat-form-field><br><br>
+        <mat-form-field class="input">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Enter Email  Here" formControlName="Email">
+            <mat-hint> Enter Your Email Id</mat-hint>
+            <mat-error
+                *ngIf="Loginform.get('Email')?.errors?.['pattern'] && !Loginform.get('Email')?.errors?.['required']">Please
+                Match Email pattern</mat-error>
+            <mat-error *ngIf="Loginform.get('Email')?.errors?.['required']">Email should be required</mat-error>
+        </mat-form-field> <br> <br>
+
+
+
+
+        <mat-form-field class="input">
+            <mat-label>Phone Number </mat-label>
+            <input matInput placeholder="Enter Mobile Number Here" formControlName="Mobile">
+            <mat-hint>Enter Your Phone Number</mat-hint>
+            <mat-error
+                *ngIf="Loginform.get('Mobile')?.errors?.['required'] && !Loginform.get('Mobile')?.errors?.['pattern'] &&  !Loginform.get('Mobile')?.errors?.['maxlength']">PhoneNumber Is Required</mat-error>
+                
+            <mat-error *ngIf="Loginform.get('Mobile')?.errors?.['pattern']">Phone Number Is Should be In Only  Alphabates</mat-error>
+               
+            <mat-error *ngIf="Loginform.get('Mobile')?.errors?.['maxlength']">Phone Number Is Should be Maximim 10 Digit</mat-error>
+               
+
+        </mat-form-field><br><br>
+        <mat-form-field class="input">
+            <mat-label>Copmpany</mat-label>
+            <input type="text" matInput formControlName="Company" required placeholder=" Company Name ">
+            <mat-hint>Enter Your Company Name </mat-hint>
+            <mat-error *ngIf="Loginform.get('Company')?.errors?.['required']">Company Name Is Required</mat-error>
+
+        </mat-form-field> <br><br>
+        <mat-form-field class="input">
+            <mat-label>Enter Date of Birth</mat-label>
+            <input type="date" matInput formControlName="DOB" required>
+            <mat-error *ngIf="Loginform.get('DOB')?.errors?.['required']">Date Of Birth Is Required</mat-error>
+            <mat-hint>Write Your Date of Birth</mat-hint>
+        </mat-form-field><br><br>
+        <mat-form-field class="input">
+            <mat-label>Password</mat-label>
+            <input type="password" matInput formControlName="Password" required (keyup)="Password()">
+            <mat-hint>Enter Password Here</mat-hint>
+            <mat-error *ngIf="Loginform.get('Password')?.errors?.['required']">Password Is required</mat-error>
+            
+        </mat-form-field><br><br>
+        <mat-form-field class="input">
+            <mat-label>Confirm Password</mat-label>
+            <input type="password" matInput formControlName="ConfirmPassword" required (keyup)="Password()">
+            <mat-hint>Enter Confirm Password Here</mat-hint>
+            <mat-error *ngIf="Loginform.get('ConfirmPassword')?.errors?.['required']">Confirm Password Is required</mat-error>
+            
+        </mat-form-field><br><br>
+        <!-- <mat-error *ngIf='iSMatch'>Password and Confirm Password Should be Match</mat-error> -->
+
+        <mat-radio-group formControlName="Gender">
+            <mat-label> <i>Select Gender</i> </mat-label>
+            <mat-radio-button value="Male" (change)="gender($event)"><i>Male</i> </mat-radio-button>
+            <mat-radio-button value="FeMale" (change)="gender($event)"><i>Female</i></mat-radio-button> &nbsp;
+            <mat-radio-button value="other" (change)="gender($event)"><i>Other</i> </mat-radio-button>
+            <!-- <mat-error *ngIf="!isGenderSelected">Gender Is Required</mat-error> &nbsp; -->
+        </mat-radio-group> <br><br>
+        <input class="btn btn-primary" type="submit" value="Register" (click)="Submit()" (click)="!Loginform.valid"> &nbsp;
+        <button *ngIf="!recordebyid" type="reset" class="btn btn-danger" >Cancel</button> &nbsp;
+        <button *ngIf="recordebyid" type="button" class="btn btn-danger" (click)="Update()">Update</button>
+    </form><br>
+
+      
+
+   
+    
+</div> 
+<!-- <button type="button" class="btn btn-outline-info"  ">Add User</button> -->
