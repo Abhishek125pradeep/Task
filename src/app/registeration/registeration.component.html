@@ -1,0 +1,53 @@
+
+<div>
+    
+    <ul class="nav">
+        <li><a href="registration">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Client</a></li>
+        <li><a href="#">Employees</a></li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+</div>
+
+<div class="blur-background" *ngIf="ShowForm">
+
+    <div class="content">
+
+        <form [formGroup]="Navbar">
+            <h1><i>i am looking for.. </i></h1>
+            <input type="text" class="inp" id="floatingInputGroup2" required class="inp"> &nbsp; &nbsp; &nbsp;
+            <button type="button" class="btn btn-primary btn-sm" (click)="search(registerationform.value)"><i>Search</i></button> <br> <br>
+            <div>
+                <div>
+                    <select class="dropdown">
+                        <option value=""><i>Select your Location</i></option>
+                        <option value=""> </option>
+                        <option value="Mumbai">Mumbai </option>
+                        <option value="Pune">Pune</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Nashik">Nashik</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+            </div>
+            <div class="div">
+                <input type="checkbox"> <i>Full time</i> &nbsp; <input type="checkbox"> <i>Part
+                    Time</i>/<i>Casual</i>/<i>Freelance</i>
+                <div>
+                   
+                    <button type="button" class="btn btn-primary btn-sm" (click)="Register()"><i>Register</i></button>
+                    
+                </div>
+            </div>
+
+
+        </form>
+
+
+
+    </div>
+
+
+</div>

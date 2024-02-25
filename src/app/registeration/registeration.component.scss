@@ -1,0 +1,151 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+.blur-background {
+    background-image: url("~src/assets/images/pc.jpg");
+    /* Replace 'background-image.jpg' with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+   
+     
+     
+
+}
+
+.blur-background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    // filter: blur(10px);
+    /* Adjust blur amount as needed */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+   
+    /* Text color for the content */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    right: 110px;
+
+}
+
+.inp {
+    height: 38px;
+    width: 480px;
+    font-style: italic;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0,0,0,.5);
+}
+
+
+.inp2{
+    height: 20px;
+  margin-left: 60px;
+ margin-bottom: 35px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  #dropdownInput {
+    width: 200px; /* Adjust width as needed */
+    padding: 10px;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
+  
+  .dropdown-menu li {
+    padding: 5px 10px;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .dropdown-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  
+  .dropdown:focus .dropdown-menu {
+    display: block;
+  }
+  .dropdown{
+    width: 180px;
+  }
+  .form{
+    width: 250px;
+  }
+  .div-container{
+    border: 2px solid black;
+    box-shadow: 0 15px 40px rgba(0,0,0,.5);
+    background-color: #f0f0f0;
+    
+  }
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.nav li {
+    float: left;
+}
+
+.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav li a:hover {
+    background-color: #111;
+}
+.Div-Form{
+  margin: auto;
+  margin-top: 20px;
+  height: 650px; ;
+  width: 400px;
+  border: 6px solid black;
+  text-align: center;
+  background-color: #d91b1b;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
+}
